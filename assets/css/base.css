@@ -1,0 +1,269 @@
+:root{
+    --white-color: #fff;
+    --black-color:#000;
+    --text-color:#333;
+    --gray-color:#B7B7B7;
+    --price-color: #fe7d15;
+}
+
+* {
+    scroll-behavior: smooth; /*Hành vi khi cuộn*/
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.grid{
+    width: 100%; /*1200px--1334px*/
+    display: block;
+    padding: 0;
+    /*margin: 17px 0 0; margin: 0 auto; */
+}
+.grid.wide{ /*if grid >1200px thì sẽ bị giới hạn lại bằng 1200px*/
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.grid__full-with{
+    width: 100%;
+}
+
+/*Row*/
+.grid.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.row.no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+}
+ /*column*/
+.col {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.row.no-gutters .col {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.c-0 {
+    display: none;
+}
+
+.c-1 {
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+}
+
+.c-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+
+.c-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.c-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+
+.c-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+}
+
+.c-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.c-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+}
+
+.c-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
+
+.c-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.c-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+}
+
+.c-11 {
+    flex: 0 0 91.66667%;
+    max-width: 91.66667%;
+}
+
+.c-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.c-o-1 {
+    margin-left: 8.33333%;
+}
+
+.c-o-2 {
+    margin-left: 16.66667%;
+}
+
+.c-o-3 {
+    margin-left: 25%;
+}
+
+.c-o-4 {
+    margin-left: 33.33333%;
+}
+
+.c-o-5 {
+    margin-left: 41.66667%;
+}
+
+.c-o-6 {
+    margin-left: 50%;
+}
+
+.c-o-7 {
+    margin-left: 58.33333%;
+}
+
+.c-o-8 {
+    margin-left: 66.66667%;
+}
+
+.c-o-9 {
+    margin-left: 75%;
+}
+
+.c-o-10 {
+    margin-left: 83.33333%;
+}
+
+.c-o-11 {
+    margin-left: 91.66667%;
+}
+
+/*********************************************************/
+/* Khung Đăng Ký*/
+/*Modal*/
+.modal{
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;  /*Căn giữa bằng:"dislay: flex"  -> (1)*/
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity linear 3;
+}
+
+
+
+.modal:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+/*lấy tọa độ modal làm chuẩn*/
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body{
+    background-color: var(--gray-color);
+    margin: auto;       /*(2)*/
+    position: relative;  /*Phần nổi modal*/
+    border-radius: 20px;  /* bo góc*/
+}
+
+.modal-close-btn {
+    font-size: 27px;
+    position: absolute;
+    margin-top: 19px;
+    right: 15px;
+    text-decoration: none;
+    color: #555;
+    padding: 0 6px;
+}
+
+/*ADD*/
+.auth-form__dieukhien{
+    margin-top: 40px;
+}
+
+/*button style*/
+/*tạo ô trở lại*/
+.btn{  
+    cursor: pointer;
+    min-width: 142px; /*Chiều ngang tối thiểu*/
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.3rem;  
+    align-items: center;  /*Căn Giữa*/
+    justify-content: center;
+    display: flex;
+}
+/*********************/
+.btn.btn--normal:hover{
+    color: #000;
+    /*background-color: rgba(0, 0, 0, 0.02);*/
+}
+/**************************/
+
+.btn.btn--size-s{
+    height: 30px;   
+    font-size: 12px;
+}
+/*Tạo ô đăng ký*/
+.btn.btn--primary{
+    background-color: #FFCC00 ;
+    min-width: 142px; 
+    height: 34px;
+}
+.btn.btn--primary a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.primary-link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--white-color);
+}
+
+/*Thuộc tính vô hiệu hóa*/
+.btn.btn--disable{
+    color: #fff;
+    cursor:default;
+    background-color: #999;
+}
+
+
